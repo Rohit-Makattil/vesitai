@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join AI-VESIT</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #2c3e50, #34495e); /* Darker gradient background */
+            background-size: 200% 200%;
+            animation: gradient 15s ease infinite;
+        }
+
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Form Container */
+        .form-container {
+            background: rgba(255, 255, 255, 0.95); /* Slightly transparent background for form */
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            width: 100%;
+            max-width: 500px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .form-container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 16px 32px rgba(0, 0, 0, 0.3);
+        }
+
+        .form-container h2 {
+            margin-bottom: 20px;
+            color: #0d47a1;
+            font-weight: 600;
+        }
+
+        .form-container label {
+            display: block;
+            text-align: left;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+
+        .form-container input, 
+        .form-container select, 
+        .form-container textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+
+        .form-container input:focus, 
+        .form-container select:focus, 
+        .form-container textarea:focus {
+            border-color: #0d47a1;
+            box-shadow: 0 0 5px rgba(13, 71, 161, 0.5);
+            outline: none;
+        }
+
+        .form-container button {
+            background-color: #0d47a1;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .form-container button:hover {
+            background-color: #0b3b8d;
+            transform: translateY(-2px);
+        }
+
+        .form-container a {
+            display: block;
+            margin-top: 15px;
+            color: #0d47a1;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .form-container a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="form-container">
+        <h2>Join AI-VESIT</h2>
+        <form action="/submit-form" method="POST">
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+
+            <label for="department">Department:</label>
+            <select id="department" name="department" required>
+                <option value="computer_science">Computer Science</option>
+                <option value="information_technology">Information Technology</option>
+                <option value="electronics">Electronics</option>
+                <option value="telecommunication">Telecommunication</option>
+                <option value="biomedical">Biomedical</option>
+            </select>
+
+            <label for="message">Why do you want to join AI-VESIT?</label>
+            <textarea id="message" name="message" rows="4" placeholder="Tell us why you want to join" required></textarea>
+
+            <button type="submit">Submit</button>
+        </form>
+
+        <a href="index.html">Back to Home</a>
+    </div>
+
+</body>
+</html>

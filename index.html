@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebDevelopment</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" /> <!-- Font Awesome for Icons -->
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            background-color: #eef2f5;
+        }
+
+        a {
+            text-decoration: none;
+            color: white;
+        }
+
+        /* Header */
+        header {
+            background-color: #003366;
+            padding: 20px;
+            color: white;
+            text-align: center;
+            position: fixed;
+            width: 100%;
+            height: 10%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        header h1 {
+            font-size: 24px;
+        }
+
+        /* Navigation */
+        nav {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            background-color: #003366;
+            position: fixed;
+            top: 60px;
+            width: 100%;
+            padding: 10px;
+            z-index: 999;
+            box-shadow: 0px 4px 2px -2px gray;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+
+        nav ul li {
+            margin: 0 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #ffcc00;
+        }
+
+        /* Hero Section */
+        .hero {
+            background-image: url('https://images.shiksha.com/mediadata/images/1553752427phpvP6G9K.png');
+            height: 90vh;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+            margin-top: 120px;
+        }
+
+        .hero .content-box {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px 40px;
+            border-radius: 10px;
+            max-width: 600px;
+        }
+
+        .hero h1 {
+            font-size: 50px;
+            margin-bottom: 20px;
+            color: #003366;
+        }
+
+        .hero p {
+            font-size: 20px;
+            color: #333;
+        }
+
+        .hero button {
+            padding: 10px 20px;
+            background-color: #ffcc00;
+            border: none;
+            color: #333;
+            font-size: 16px;
+            cursor: pointer;
+            margin-right: 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .hero button:hover {
+            background-color: #ffb700;
+        }
+
+        /* About Us Section */
+        #about {
+            background-color: #ffffff;
+            padding: 50px 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            margin: 20px auto;
+            max-width: 800px;
+            height: 100vh; /* Full-height */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        #about::before {
+            content: '';
+            background: url('https://images.unsplash.com/photo-1568058136496-4d38baf4b394?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80') no-repeat center center/cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            opacity: 0.1; /* Background opacity */
+            z-index: 1; /* Send background to the back */
+            border-radius: 10px;
+        }
+
+        .about-content {
+            color: #333;
+            padding: 20px;
+            position: relative; /* To position elements above the background */
+            z-index: 2; /* Bring the content above the background */
+            text-align: center; /* Center text */
+        }
+
+        .about-content h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Slight shadow for text */
+        }
+
+        .about-content p {
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+
+        .about-content ul {
+            list-style-type: none; /* Remove default bullet points */
+            margin: 10px 0;
+            padding-left: 0; /* No left padding */
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Center list items */
+        }
+
+        /* Card Layout for Events */
+        .card {
+            background: #f8f8f8;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+            width: 80%; /* Responsive card width */
+            text-align: left; /* Align text to the left */
+        }
+
+        .card h4 {
+            margin-bottom: 10px;
+            font-size: 20px; /* Card title size */
+        }
+
+        .card:hover {
+            transform: scale(1.05); /* Scale effect on hover */
+        }
+
+        /* Footer */
+        footer {
+            background-color: #003366;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        footer a {
+            color: #ffcc00;
+            text-decoration: none;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 36px; /* Responsive heading size */
+            }
+
+            .hero p {
+                font-size: 18px; /* Responsive paragraph size */
+            }
+
+            .about-content h2 {
+                font-size: 30px; /* Responsive section title size */
+            }
+
+            .section {
+                padding: 60px 10px; /* Less padding for smaller screens */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1>WEBDEVELOPMENT PROJECT</h1>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#events">Events</a></li>
+            <li><a href="membership.html">Membership</a></li>
+            <li><a href="team.html">Our Team</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="hero">
+        <div class="content-box">
+            <h1>Welcome to AI-VESIT</h1>
+            <p>Empowering Students with Technology and Innovation</p>
+            <button onclick="window.location.href='join.html'">Join Us</button>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <div id="about" class="section">
+        <div class="about-content">
+            <h2>About AI-VESIT</h2>
+            <p>
+                AI-VESIT is one of the leading student organizations that aims to foster technical and professional growth for its members. 
+                We conduct a variety of workshops, hackathons, and coding competitions aimed at students of all skill levels.
+            </p>
+            
+            <h3>Key Events:</h3>
+            <div class="card">
+                <h4><i class="fas fa-laptop-code"></i> AI for Beginners Workshop</h4>
+                <p>Learn the fundamentals of artificial intelligence and machine learning in this hands-on workshop.</p>
+            </div>
+            <div class="card">
+                <h4><i class="fas fa-code-branch"></i> Annual Coding Hackathon - HackVESIT</h4>
+                <p>Join our annual hackathon to collaborate and innovate with fellow tech enthusiasts.</p>
+            </div>
+            <div class="card">
+                <h4><i class="fas fa-comments"></i> AI-Powered Chatbot Building Workshop</h4>
+                <p>Develop your own chatbot using AI technologies in this interactive workshop.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 AI-VESIT. All rights reserved.</p>
+        <p><a href="#top">Back to top</a></p>
+    </footer>
+
+</body>
+</html>
